@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FreeYourMind Blocker</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 10px;
+        width: 200px;
+      }
+      h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+        max-height: 200px;
+        overflow-y: auto;
+      }
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 5px 0;
+      }
+      input {
+        width: calc(100% - 26px);
+        padding: 5px;
+      }
+      button {
+        margin-left: 5px;
+        padding: 4px;
+      }
+      .logo {
+        width: 100%;
+      }
+      .add-site {
+        display: flex;
+        flex-direction: row;
+      }
+      .add-site-btn {
+        cursor: pointer;
+      }
+      #errorMessage {
+        color: red;
+        font-size: 12px;
+        margin-top: 5px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h2><img class="logo" src="./fym-logo.png" /></h2>
+    <ul id="blockedSitesList"></ul>
+
+    <div class="add-site">
+      <input
+        type="text"
+        id="siteInput"
+        placeholder="Add a site (e.g., example.com)"
+      />
+      <button class="add-site-btn" id="addSiteButton">Add</button>
+    </div>
+
+    <div id="errorMessage"></div>
+    <!-- Error message area -->
+
+    <script src="popup.js"></script>
+  </body>
+</html>
