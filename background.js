@@ -22,11 +22,6 @@ function updateBlockedSites(sites) {
     ];
   });
 
-  // Explicitly check for news.google.com and log its generated rules
-  const newsGoogleRules = rules.filter((rule) =>
-    rule.condition.urlFilter.includes("news.google.com")
-  );
-
   // Get existing rules and remove them before adding new ones
   chrome.declarativeNetRequest.getDynamicRules((existingRules) => {
     const existingRuleIds = existingRules.map((rule) => rule.id);
